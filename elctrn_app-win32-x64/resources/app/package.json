@@ -1,0 +1,21 @@
+{
+  "name": "elctrn_app",
+  "version": "1.0.0",
+  "description": "First electron app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "build": "electron-packager ."
+  },
+  "author": "yaxraj",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^26.2.4"
+  },
+  "dependencies": {
+    "electron-packager": "^17.1.2",
+    "nodemon": "^3.0.1"
+  }
+}

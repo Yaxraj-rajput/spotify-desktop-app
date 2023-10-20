@@ -1,0 +1,571 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+$black: #000;
+$gray: #101010;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "Hind", sans-serif;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+
+  .left-side-main {
+    width: 30rem;
+    height: 100vh;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    resize: horizontal;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute; /* Position the pseudo-element absolutely */
+      right: 0; /* Position the pseudo-element on the right side of the div */
+      top: 0; /* Align it with the top of the div */
+      width: 3px;
+      height: 100%;
+      background-color: transparent;
+      cursor: e-resize;
+    }
+
+    .menu-section {
+      width: 100%;
+      height: 17%;
+      background-color: $gray;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .menu-section-cards {
+        height: 100%;
+        width: 90%;
+
+        .logo {
+          width: 100%;
+          height: 30%;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 23%;
+            filter: invert(1);
+          }
+        }
+
+        .buttons {
+          width: 100%;
+          height: 66%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .active {
+            opacity: 100%;
+          }
+
+          li {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: $white;
+            opacity: 50%;
+            font-weight: 800;
+
+            .bi {
+              font-size: 1.5rem;
+              color: $white;
+              margin-right: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .library-section {
+      width: 100%;
+      height: 83%;
+      background-color: $gray;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .library-section-cards {
+        height: 100%;
+        width: 90%;
+
+        .logo {
+          width: 100%;
+          height: 30%;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 23%;
+            filter: invert(1);
+          }
+        }
+
+        .buttons {
+          width: 100%;
+          height: 3.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .active {
+            opacity: 100%;
+          }
+
+          li {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: $white;
+            opacity: 50%;
+            font-weight: 800;
+
+            .bi {
+              font-size: 1.5rem;
+              color: $white;
+              margin-right: 1.2rem;
+            }
+          }
+        }
+      }
+      .filter-buttons {
+        width: 100%;
+        height: 3.5rem;
+        display: flex;
+
+        ul {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          li {
+            font-size: 0.9rem;
+            color: $white;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            border-radius: 2rem;
+            background-color: rgba(255, 255, 255, 0.062);
+          }
+        }
+      }
+
+      .artist-playlist-cards {
+        margin-top: 0.7rem;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        overflow: hidden;
+
+        &:hover {
+          overflow-y: scroll;
+        }
+
+        .card {
+          width: 100%;
+          height: 4rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0.4rem;
+          border-radius: 0.5rem;
+          gap: 1rem;
+          transition: 0.2s ease-in;
+
+          &:hover {
+            background-color: #ffffff0c;
+          }
+
+          .thumbnail-sec {
+            width: 17%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+
+            .thumbnail {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              overflow: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                transform-origin: center;
+                width: 150%;
+                height: 100%;
+              }
+            }
+          }
+
+          .text-div {
+            width: 100%;
+            height: calc(100% - 10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .title {
+              font-weight: 500;
+              color: $white;
+            }
+
+            .type {
+              color: rgba(255, 255, 255, 0.384);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .right-side-main {
+    width: 100%;
+    height: 100vh;
+    padding: 0.5rem;
+    padding-left: 0.1rem;
+
+    .right-side-main-frame {
+      width: 100%;
+      height: 100%;
+      background-color: #121215;
+      position: relative;
+      border-radius: 0.4rem;
+      overflow-y: scroll;
+
+      .navbar {
+        position: absolute;
+        width: 100%;
+        padding: 2rem 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+
+        .left {
+          width: 20%;
+
+          .nav-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            .forw {
+              img {
+                rotate: 180deg;
+              }
+            }
+
+            button {
+              width: 1.9rem;
+              padding: 0.5rem;
+              outline: none;
+              border: none;
+              border-radius: 5rem;
+              aspect-ratio: 1 / 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+
+              background-color: rgba(255, 255, 255, 0.158);
+
+              img {
+                width: 80%;
+                filter: invert(1);
+              }
+            }
+          }
+        }
+
+        .right {
+          width: 20%;
+
+          .nav-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 0.5rem;
+
+            .profile {
+              padding: 0.2rem;
+            }
+
+            button {
+              width: 2rem;
+              padding: 0.5rem;
+              outline: none;
+              border: none;
+              border-radius: 5rem;
+              aspect-ratio: 1 / 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              background-color: rgba(255, 255, 255, 0.158);
+
+              img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                border-radius: 5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .feed-section-1 {
+      padding-top: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      width: 100%;
+      height: 18.5rem;
+      background: rgb(33, 18, 91);
+      background: linear-gradient(180deg, rgba(33, 18, 91, 1) 0%, rgba(18, 18, 18, 1) 100%);
+
+      .feed-title {
+        font-size: 2.1rem;
+        color: $white;
+      }
+
+      .cards-section {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        grid-template-rows: 4.2rem 4.2rem;
+
+        .card {
+          border-radius: 0.2rem;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          overflow: hidden;
+          transition: 0.2s ease-in-out;
+          background-color: #ffffff0e;
+          position: relative;
+
+          button {
+            height: 100%;
+            position: absolute;
+            right: 0.5rem;
+            aspect-ratio: 1 / 1;
+            background-color: transparent;
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0%;
+            transition: 0.2s ease-in;
+            cursor: pointer;
+
+            img {
+              width: 75%;
+            }
+          }
+
+          &:hover {
+            background-color: #ffffff25;
+          }
+
+          &:hover button {
+            opacity: 100%;
+            &:hover {
+              transform: scale(1.02);
+            }
+          }
+          .image {
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.897) 0px 20px 40px 3px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .text {
+            width: 75%;
+            display: flex;
+            align-items: center;
+
+            h3 {
+              margin-left: 1rem;
+              color: $white;
+              font-size: 1rem;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
+    .feed-section-2 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      width: 100%;
+      height: 16rem;
+      margin-bottom: 5rem;
+
+      a {
+        text-decoration: none;
+        .feed-title {
+          font-size: 1.6rem;
+          color: $white;
+        }
+      }
+
+      .cards-section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        overflow: hidden;
+        overflow: hidden; /* Hide overflowing content */
+
+        .card {
+          height: 100%;
+          flex: 1;
+          min-width: 10rem;
+          background-color: rgba(255, 255, 255, 0.041);
+          border-radius: 0.5rem;
+          display: flex;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1rem;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.11);
+          }
+
+          &:hover .image button {
+            opacity: 100%;
+            &:hover {
+              transform: scale(1.02);
+            }
+          }
+
+          .image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 0.4rem;
+            position: relative;
+
+            button {
+              height: 3rem;
+              position: absolute;
+              z-index: 9999;
+              aspect-ratio: 1 / 1;
+              bottom: 1rem;
+              right: 0.7rem;
+              background-color: transparent;
+              border-radius: 50%;
+              outline: none;
+              border: none;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: 0.2s ease-in;
+              cursor: pointer;
+              opacity: 0%;
+
+              img {
+                width: 100%;
+              }
+            }
+            img {
+              width: 100%;
+              border-radius: 0.3rem;
+            }
+          }
+
+          .text {
+            width: 100%;
+
+            .artists {
+              display: block;
+              color: #ffffff96;
+              font-size: 0.9rem;
+            }
+
+            .title {
+              display: block;
+              font-weight: bold;
+              margin-top: 1rem;
+              color: white;
+            }
+            span {
+              font-size: 1rem;
+              line-height: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**************scrollbar*************/
+
+  .artist-playlist-cards::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Handle */
+  .artist-playlist-cards::-webkit-scrollbar-thumb {
+    background: rgba(192, 192, 192, 0.425);
+    border-radius: 10px;
+  }
+
+  .right-side-main-frame::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Handle */
+  .right-side-main-frame::-webkit-scrollbar-thumb {
+    background: rgba(192, 192, 192, 0);
+    border-radius: 10px;
+  }
+
+  .right-side-main-frame:hover::-webkit-scrollbar-thumb {
+    background: rgba(192, 192, 192, 0.432);
+  }
+}

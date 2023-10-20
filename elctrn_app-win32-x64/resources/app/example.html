@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Gradient Background</title>
+    <script src="https://cdn.jsdelivr.net/npm/vibrant.js"></script>
+</head>
+
+<body>
+    <img id="image" src="./images/burger.jpeg" style="width: 100px;" alt="Your Image">
+    <div id="gradient-div" style="width: 100px; height: 100px;"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const image = document.getElementById("image");
+            const gradientDiv = document.getElementById("gradient-div");
+
+            // Create a Vibrant.js object for the image
+            const vibrant = new Vibrant(image);
+            const swatches = vibrant.swatches();
+
+            // Find the prominent color swatch
+            let prominentSwatch = null;
+            for (const swatch in swatches) {
+                if (swatches[swatch] && swatches[swatch].getPopulation() > 10) {
+                    prominentSwatch = swatches[swatch];
+                    break;
+                }
+            }
+
+            // Apply the prominent color as a gradient background
+            if (prominentSwatch) {
+                gradientDiv.style.background = `linear-gradient(to right, ${prominentSwatch.getHex()}, #fff)`;
+            }
+        });
+    </script>
+</body>
+
+</html>
